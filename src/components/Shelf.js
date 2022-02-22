@@ -1,11 +1,9 @@
-import React from 'react'
-import Book from './Book'
-
+import React from "react";
+import Book from "./Book";
 
 // const Shelf = ({section, books, category, changeShelf}) => {
 //     const booksCategory = books.filter((book)=> book.shelf === category)
 
-    
 // console.log(books)
 
 //     return (
@@ -21,29 +19,25 @@ import Book from './Book'
 //                  ))}
 //                 </ol>
 //               </div>
-//             </div>  
+//             </div>
 //     )
 // }
 
-const Shelf = ({section , books,category ,onChangeShelf}) => {
-    const book_category = books.filter((book)=> book.shelf === category)
+const Shelf = ({ section, books, category, onChangeShelf }) => {
+  const book_category = books.filter((book) => book.shelf === category);
 
-    
-    return (
-          <div className="bookshelf">
-              <h2 className="bookshelf-title">{section}</h2>
-              <div className="bookshelf-books">
-                <ol className="books-grid">
-                {/* Book component */}
-                {book_category.map((book)=> (
-                   <Book key={book.id} book={book}  onChangeShelf={onChangeShelf}/>
-                ))}
-               
-              
-                </ol>
-              </div>
-            </div>
-    
-    )
-}
-export default Shelf
+  return (
+    <div className="bookshelf">
+      <h2 className="bookshelf-title">{section}</h2>
+      <div className="bookshelf-books">
+        <ol className="books-grid">
+          {/* Book component */}
+          {book_category.map((book) => (
+            <Book key={book.id} book={book} onChangeShelf={onChangeShelf} />
+          ))}
+        </ol>
+      </div>
+    </div>
+  );
+};
+export default Shelf;

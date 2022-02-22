@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
+import Header from "./Header";
 
 class BooksList extends Component {
   render() {
@@ -8,9 +9,7 @@ class BooksList extends Component {
     const onChangeShelf = this.props.onChangeShelf;
     return (
       <div className="list-books">
-        <div className="list-books-title">
-          <h1>MyReads</h1>
-        </div>
+        <Header />
         <div className="list-books-content">
           <div>
             {/* add shelf component */}
@@ -35,12 +34,8 @@ class BooksList extends Component {
           </div>
         </div>
         <div className="open-search">
-          {/* <button onClick={() => this.setState({ showSearchPage: true })}>
-            Add a book
-          </button> */}
           <Link to="/search" className="open-search-link">
-            {" "}
-            Close
+            Search
           </Link>
         </div>
       </div>

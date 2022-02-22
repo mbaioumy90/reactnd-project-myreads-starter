@@ -1,12 +1,12 @@
 import React from "react";
 
 const Book = (props) => {
-   // debugger;
+  // debugger;
 
   function updateShelf(event) {
-      debugger;
+    debugger;
     props.onChangeShelf(props.book, event.target.value);
-  }; 
+  }
   return (
     <li key={props.book.id}>
       <div className="book">
@@ -16,18 +16,16 @@ const Book = (props) => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage:
-              props.book.imageLinks ? 
-                `url(${
-                  props.book.imageLinks.smallThumbnail
-                })`
-                :
-                ""
+              backgroundImage: props.book.imageLinks
+                ? `url(${props.book.imageLinks.smallThumbnail})`
+                : "",
             }}
           />
           <div className="book-shelf-changer">
-            <select  onChange={updateShelf}
-                value={props.book.shelf ? props.book.shelf : "none"}>
+            <select
+              onChange={updateShelf}
+              value={props.book.shelf ? props.book.shelf : "none"}
+            >
               <option value="move" disabled>
                 Move to...
               </option>
@@ -38,17 +36,14 @@ const Book = (props) => {
             </select>
           </div>
         </div>
-          <div className="book-title">{props.book.title}</div>
-          {/* <div className="book-authors">{book.authors}</div> */}
-          <div className="book-authors">
-            <strong>
-              {props.book.shelf ? props.book.shelf : "none"}
-            </strong>
-          </div>
+        <div className="book-title">{props.book.title}</div>
+        {/* <div className="book-authors">{book.authors}</div> */}
+        <div className="book-authors">
+          <strong>{props.book.shelf ? props.book.shelf : "none"}</strong>
+        </div>
       </div>
     </li>
   );
 };
-
 
 export default Book;

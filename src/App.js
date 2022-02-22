@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
@@ -6,14 +7,7 @@ import BooksList from "./components/BooksList";
 import BooksSearch from "./components/BooksSearch";
 
 class App extends Component {
-  state = {
-    /**
-     * TODO: Instead of using this state variable to keep track of which page
-     * we're on, use the URL in the browser's address bar. This will ensure that
-     * users can use the browser's back and forward buttons to navigate between
-     * pages, as well as provide a good URL they can bookmark and share.
-     */
-    //showSearchPage: true,
+  state = {   
     books: [],
     booksResult: [],
     search: "",
@@ -102,5 +96,10 @@ class App extends Component {
     );
   }
 }
-
+App.propTypes  = {
+  books: PropTypes.array,
+  booksResult: PropTypes.array,
+  search: PropTypes.string,
+  isFound: PropTypes.bool,
+};
 export default App;
