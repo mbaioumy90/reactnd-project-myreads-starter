@@ -6,10 +6,10 @@ const NotFound = () => (
   <div className="">
     <Header />
     <div>     
-        <h1>Opps: 404 - Not Found!</h1>
+        <h1>Opps: 404 - Page Not Found!</h1>
         <Link to="/">Go Home</Link>
       </div>
   </div>
 );
 
-export default NotFound;
+export default NotFound; 
