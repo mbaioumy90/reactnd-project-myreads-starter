@@ -21,10 +21,17 @@ To get started developing right away:
 │   ├── favicon.ico # React Icon, You may change if you wish.
 │   └── index.html # DO NOT MODIFY
 └── src
+    ├── components # all child components 
+    ├   ├── Book.js # For display evry book alone (and update book shelf).
+    ├   ├── BookList.js # For Display Shelfs with its books.
+    ├   ├── BooksSearch.js # For Books Searching.
+    ├   ├── Header.js # Display an app header.
+    ├   └── Shelf.js  # For dispay a group of Shelf books.
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
     ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── NotFound.js # This is the root for any page not Found or incorrect path(404).
     ├── icons # Helpful images for your app. Use at your discretion.
     │   ├── add.svg
     │   ├── arrow-back.svg
@@ -34,7 +41,8 @@ To get started developing right away:
 ```
 
 Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
-
+## Notes:
+   --> I used Routes instead of SWitch because The Version of react-dom.
 ## Backend Server
 
 To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:

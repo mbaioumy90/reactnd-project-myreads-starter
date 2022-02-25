@@ -5,9 +5,10 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import BooksList from "./components/BooksList";
 import BooksSearch from "./components/BooksSearch";
+import NotFound from './NotFound';
 
 class App extends Component {
-  state = {   
+  state = {
     books: [],
     booksResult: [],
     search: "",
@@ -24,7 +25,6 @@ class App extends Component {
 
   /* update book in new shelf */
   onChangeShelf = async (book, shelf) => {
-    debugger;
     await BooksAPI.update(book, shelf);
     await BooksAPI.getAll().then((res) => {
       this.setState({
@@ -35,7 +35,6 @@ class App extends Component {
   };
 
   onChangeSearch = async (event) => {
-    debugger;
     await this.setState({
       search: event.target.value,
     });
@@ -60,9 +59,7 @@ class App extends Component {
           isFound: false,
         });
       }
-    }); // then
-    console.log("Search");
-    console.log(this.state.BooksSearch);
+    }); 
   };
 
   render() {
@@ -91,12 +88,13 @@ class App extends Component {
               />
             }
           />
+          <Route  path='*' exact={true} element={<NotFound />} /> 
         </Routes>
       </div>
     );
   }
 }
-App.propTypes  = {
+App.propTypes = {
   books: PropTypes.array,
   booksResult: PropTypes.array,
   search: PropTypes.string,

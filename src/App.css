@@ -211,3 +211,9 @@ button:active {
   text-align: center;
   font-size: 0.8em;
 }
+
+.headerContainer1 {  
+  background: "red" !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

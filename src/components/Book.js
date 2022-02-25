@@ -1,10 +1,7 @@
 import React from "react";
 
 const Book = (props) => {
-  // debugger;
-
   function updateShelf(event) {
-    debugger;
     props.onChangeShelf(props.book, event.target.value);
   }
   return (
